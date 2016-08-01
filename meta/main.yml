@@ -1,0 +1,22 @@
+galaxy_info:
+  author: Baptiste Grenier <baptiste.grenier@egi.eu>
+  owner: indigo-dc
+  description: Install and configure cloud-info-provider
+  company: INDIGO-DataCloud
+  license: MIT
+  min_ansible_version: 2.0
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+    - name: EL
+      versions:
+        - 7
+  galaxy_tags:
+    - cloud
+    - cloud-info-provider
+    - indigo
+    - opennebula
+    - openstack
+
+dependencies: []
