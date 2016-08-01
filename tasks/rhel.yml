@@ -20,3 +20,6 @@
     name: indigo-dc-third-party:
     description: INDIGO-DataCloud third-party repository for release 1
     baseurl: http://repo.indigo-datacloud.eu/repository/indigo-testing/1/centos$releasever/$third-partyarch/third-party
+
+- name: Install cloud-info-provider
+  yum: name='cloud-info-provider-indigo' state='latest'
