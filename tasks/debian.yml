@@ -3,7 +3,10 @@
 # TODO configure repository key
 # apt_key: url=xxx state=present
 - name: Configure INDIGO-DataCloud deb repository
-apt_repository: repo='deb http://repo.indigo-datacloud.eu/repository/indigo-testing/1/ubuntu trusty main third-party' state=present
+  apt_repository: repo='deb http://repo.indigo-datacloud.eu/repository/indigo-testing/1/ubuntu trusty main third-party' state=present
 
 - name: Configure INDIGO-DataCloud deb updates repository
-apt_repository: repo='deb http://repo.indigo-datacloud.eu/repository/indigo-testing/1/ubuntu trusty-updates main third-party' state=present
+  apt_repository: repo='deb http://repo.indigo-datacloud.eu/repository/indigo-testing/1/ubuntu trusty-updates main third-party' state=present
+
+- name: Install cloud-info-provider
+  apt: name='python-cloud-info-provider-indigo' state='latest' update_cache='yes'
