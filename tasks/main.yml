@@ -1,0 +1,14 @@
+---
+- name: Exit if OS is unsupporeted
+  fail:
+    msg="Role unsupported on {{ansible_distribution}}"
+  when: "ansible_os_family != 'Debian' and ansible_os_family != 'RedHat'
+
+- name: Load debian-specific configuration
+  include debian.yml
+  when ansible_distribution == 'Debian'
+
+- name: Load RHEL-specific configuration
+  include rhel.yml
+  when ansible_distribution == 'RedHat'
+
