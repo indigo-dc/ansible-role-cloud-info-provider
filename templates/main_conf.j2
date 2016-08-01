@@ -1,0 +1,11 @@
+site:
+    name: {{ cloud_info_provider_sitename }}
+
+compute:
+    images:
+        defaults:
+            # Set to False or comment the line below if you want to show
+            # all the images installed in the site (also snapshots). Otherwise
+            # only images with a valid marketplace ID (set by the marketplace
+            # custom property) are shown
+            require_marketplace_id: {{ cloud_info_provider_require_martkepalce_id }}
