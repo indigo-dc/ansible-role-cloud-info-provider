@@ -5,19 +5,19 @@
 # rpmkey: state=present key=xxx
 - name: Configure INDIGO-DataCloud RPM base repository
   yum_repository:
-    name: indigo-dc-base:
+    name: indigo-dc-base
     description: INDIGO-DataCloud base repository for release 1
     baseurl: http://repo.indigo-datacloud.eu/repository/indigo-testing/1/centos$releasever/$basearch/base
 
 - name: Configure INDIGO-DataCloud RPM updates repository
   yum_repository:
-    name: indigo-dc-updates:
+    name: indigo-dc-updates
     description: INDIGO-DataCloud updates repository for release 1
     baseurl: http://repo.indigo-datacloud.eu/repository/indigo-testing/1/centos$releasever/$basearch/updates
 
 - name: Configure INDIGO-DataCloud RPM third-party repository
   yum_repository:
-    name: indigo-dc-third-party:
+    name: indigo-dc-third-party
     description: INDIGO-DataCloud third-party repository for release 1
     baseurl: http://repo.indigo-datacloud.eu/repository/indigo-testing/1/centos$releasever/$third-partyarch/third-party
 
