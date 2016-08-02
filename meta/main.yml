@@ -14,7 +14,6 @@ galaxy_info:
         - 7
   galaxy_tags:
     - cloud
-    - cloud-info-provider
     - indigo
     - opennebula
     - openstack
