@@ -2,6 +2,8 @@
 
 Ansible role for setting up [cloud-info-provider](https://github.com/indigo-dc/cloud-info-provider)
 
+[![BuildStatus](https://travis-ci.org/indigo-dc/ansible-role-cloud-info-provider.svg?branch=master)](https://travis-ci.org/indigo-dc/ansible-role-cloud-info-provider)
+
 ## Requirements
 
 The role should be run in an environment where a supported cloud middleware is
