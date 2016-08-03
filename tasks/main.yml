@@ -7,11 +7,11 @@
 
 - name: Load debian-specific configuration
   include: debian.yml
-  when: ansible_distribution == 'Debian'
+  when: ansible_os_family == 'Debian'
 
 - name: Load RHEL-specific configuration
   include: rhel.yml
-  when: ansible_distribution == 'RedHat'
+  when: ansible_os_family == 'RedHat'
 
 - name: Configure static/default provider
   template: src=main_conf.j2 dest={{ cloud_info_provider_conf_dir }}/{{ cloud_info_provider_main_conf_file }}
