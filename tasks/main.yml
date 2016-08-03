@@ -17,7 +17,7 @@
   template: src=main_conf.j2 dest={{ cloud_info_provider_conf_dir }}/{{ cloud_info_provider_main_conf_file }}
 
 - cron: name='Send cloud-info-provider data to CMDB' special_time=hourly job="cloud-info-provider-indigo-service --middleware {{ cloud_info_provider_middleware }} --os-username {{ cloud_info_provider_os_username }} --os-tenant-name {{ cloud_info_provider_os_tenant_name }} --os-password {{ cloud_info_provider_os_password }} --os-auth-url {{ cloud_info_provider_os_auth_url }} 2&>/dev/null | send-to-cmdb --cmdb-read-endpoint {{ cloud_info_provider_cmdb_read_url }} --cmdb-write-endpoint  {{ cloud_info_provider_cmdb_write_url }} --cmdb-user {{ cloud_info_provider_cmdb_user }} --cmdb-password {{ cloud_info_provider_cmdb_password }} --sitename {{ cloud_info_provider_sitename }}"
-  when: cloud_info_provider_middleware == 'openstack'
+  when: "cloud_info_provider_setup_cron and cloud_info_provider_middleware == 'openstack'"
 
 - cron: name='Send cloud-info-provider data to CMDB' special_time=hourly job="cloud-info-provider-indigo-service --middleware {{ cloud_info_provider_middleware }} --on-auth {{ cloud_info_provider_on_auth }} --on-rpcxml-endpoint {{ cloud_info_provider_on_xmlrpc_url }} 2&>/dev/null | send-to-cmdb --cmdb-read-endpoint {{ cloud_info_provider_cmdb_read_url }} --cmdb-write-endpoint  {{ cloud_info_provider_cmdb_write_url }} --cmdb-user {{ cloud_info_provider_cmdb_user }} --cmdb-password {{ cloud_info_provider_cmdb_password }}  --sitename {{ cloud_info_provider_sitename }}"
-  when: cloud_info_provider_middleware == 'indigoon'
+  when: "cloud_info_provider_setup_cron and cloud_info_provider_middleware == 'indigoon'"

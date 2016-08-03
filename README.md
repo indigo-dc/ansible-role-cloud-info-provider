@@ -18,6 +18,7 @@ Role variables with their default values.
 * cloud_info_provider_sitename: TEST
 * cloud_info_provider_conf_dir: /etc/cloud-info-provider-indigo
 * cloud_info_provider_main_conf_file: static.yaml
+* cloud_info_provider_setup_cron: false
 * cloud_info_provider_require_martkeplace_id: false
 * cloud_info_provider_middleware: unset but mandatory
 
