@@ -8,5 +8,5 @@
   yum:
     name: cloud-info-provider-indigo
     state: latest
-    disable_gpg_check: no
+    disable_gpg_check: yes
     update_cache: yes
