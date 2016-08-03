@@ -43,9 +43,23 @@ Role variables with their default values.
 
 ## Example Playbook
 
-    - hosts: servers
-      roles:
-         - { role: indigo-dc.cloud-info-provider, cloud_info_provider_cmdb_user=XXXX, cloud_info_provider_cmdb_password=1h3$3Cur3P4$$ }
+``` yaml
+---
+- hosts: node1
+  roles:
+    - role: indigo-dc.cloud-info-provider
+      cloud_info_provider_sitename: TEST
+      cloud_info_provider_middleware: indigoon
+      cloud_info_provider_setup_cron: true
+      # OpenNebula configuration
+      cloud_info_provider_on_auth: oneadmin:opennebula
+      cloud_info_provider_on_xmlrpc_url: http://127.0.0.1:2633/RPC2
+      # CMDB configuration
+      cloud_info_provider_cmdb_read_url: http://indigo.cloud.plgrid.pl/cmdb
+      cloud_info_provider_cmdb_write_url: http://couch.cloud.plgrid.pl/indigo-cmdb-v2
+      cloud_info_provider_cmdb_user: XXXXXXXXXXX
+      cloud_info_provider_cmdb_password: XXXXXXXXXXX
+```
 
 ## License
 
