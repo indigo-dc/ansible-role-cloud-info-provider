@@ -31,7 +31,7 @@ Role variables with their default values.
 ### OpenNebula configuration
 
 * cloud_info_provider_on_auth: oneadmin:opennebula
-* cloud_info_provider_on_xmrpc_url: http://127.0.0.1:2633/RPC2
+* cloud_info_provider_on_rpcxml_url: http://127.0.0.1:2633/RPC2
 
 ### CMDB configuration
 

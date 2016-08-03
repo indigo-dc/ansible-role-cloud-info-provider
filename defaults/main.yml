@@ -10,7 +10,7 @@ cloud_info_provider_os_auth_url: http://127.0.01:5000/v2.0
 cloud_info_provider_os_tenant_name: demo
 # OpenNebula configuration
 cloud_info_provider_on_auth: oneadmin:opennebula
-cloud_info_provider_on_xmrpc_url: http://127.0.0.1:2633/RPC2
+cloud_info_provider_on_xmlrpc_url: http://127.0.0.1:2633/RPC2
 # CMDB configuration
 cloud_info_provider_cmdb_read_url: http://indigo.cloud.plgrid.pl/cmdb
 cloud_info_provider_cmdb_write_url: http://couch.cloud.plgrid.pl/indigo-cmdb-v2
