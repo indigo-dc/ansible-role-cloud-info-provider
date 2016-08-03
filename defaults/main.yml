@@ -7,7 +7,7 @@ cloud_info_provider_require_martketplace_id: false
 # OpenStack configuration
 cloud_info_provider_os_username: admin
 cloud_info_provider_os_password: openstack
-cloud_info_provider_os_auth_url: http://127.0.01:5000/v2.0
+cloud_info_provider_os_auth_url: http://127.0.0.1:5000/v2.0
 cloud_info_provider_os_tenant_name: demo
 # OpenNebula configuration
 cloud_info_provider_on_auth: oneadmin:opennebula
