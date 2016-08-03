@@ -10,3 +10,9 @@
     name: python-cloud-info-provider-indigo
     state: latest
     update_cache: yes
+
+- name: Install python-novaclient
+  apt:
+    name: python-novaclient
+    state: latest
+  when: cloud_info_provider_middleware == 'openstack'

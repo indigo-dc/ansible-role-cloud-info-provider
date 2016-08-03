@@ -10,3 +10,9 @@
     state: latest
     disable_gpg_check: yes
     update_cache: yes
+
+- name: Install python-novaclient
+  yum:
+    name: python-novaclient
+    state: latest
+  when: cloud_info_provider_middleware == 'openstack'
