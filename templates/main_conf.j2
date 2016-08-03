@@ -2,6 +2,10 @@ site:
     name: {{ cloud_info_provider_sitename }}
 
 compute:
+{% if cloud_info_provider_middleware == 'indigoon' %}
+    endpoints:
+        {{ cloud_info_provider_on_xmlrpc_url }}:
+{% endif %}
     images:
         defaults:
             # Set to False or comment the line below if you want to show
