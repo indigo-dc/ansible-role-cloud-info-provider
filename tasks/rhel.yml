@@ -1,25 +1,18 @@
 ---
-# XXX repo management should be moved to a dedicated role
-# TODO confgure gpgkey
-# gpgkey: xxxx
-# rpmkey: state=present key=xxx
-- name: Configure INDIGO-DataCloud RPM base repository
-  yum_repository:
-    name: indigo-dc-base
-    description: INDIGO-DataCloud base repository for release 1
-    baseurl: http://repo.indigo-datacloud.eu/repository/indigo-testing/1/centos$releasever/$basearch/base
-
-- name: Configure INDIGO-DataCloud RPM updates repository
-  yum_repository:
-    name: indigo-dc-updates
-    description: INDIGO-DataCloud updates repository for release 1
-    baseurl: http://repo.indigo-datacloud.eu/repository/indigo-testing/1/centos$releasever/$basearch/updates
-
-- name: Configure INDIGO-DataCloud RPM third-party repository
-  yum_repository:
-    name: indigo-dc-third-party
-    description: INDIGO-DataCloud third-party repository for release 1
-    baseurl: http://repo.indigo-datacloud.eu/repository/indigo-testing/1/centos$releasever/$basearch/third-party
+- name: install the INDIGO release package
+  yum:
+    name: http://jenkins.indigo-datacloud.eu/repository/indigo-testing/1/centos7/x86_64/base/indigodc-release-1.0.0-1.el7.centos.noarch.rpm
+    state: present
 
 - name: Install cloud-info-provider
-  yum: name='cloud-info-provider-indigo' state='latest'
+  yum:
+    name: cloud-info-provider-indigo
+    state: latest
+    disable_gpg_check: yes
+    update_cache: yes
+
+- name: Install python-novaclient
+  yum:
+    name: python-novaclient
+    state: latest
+  when: cloud_info_provider_middleware == 'openstack'
