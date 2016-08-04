@@ -1,4 +1,9 @@
 ---
+- name: Install the INDIGO GPG key
+  apt_key:
+    state: present
+    url: http://repo.indigo-datacloud.eu/repository/RPM-GPG-KEY-indigodc
+
 - name: install the INDIGO release package
   apt:
     state: present
