@@ -1,15 +1,19 @@
 ---
+- name: Install the INDIGO GPG key
+  apt_key:
+    state: present
+    url: http://repo.indigo-datacloud.eu/repository/RPM-GPG-KEY-indigodc
+
 - name: install the INDIGO release package
   apt:
     state: present
-    deb: http://jenkins.indigo-datacloud.eu/repository/indigo-testing/1/ubuntu/dists/trusty/main/binary-amd64/indigodc-release_1.0.0-1_amd64.deb
+    deb: http://jenkins.indigo-datacloud.eu/repository/indigo-preview/1/ubuntu/dists/trusty/main/binary-amd64/indigodc-release_1.0.0-1_amd64.deb
 
 - name: Install cloud-info-provider
   apt:
     name: python-cloud-info-provider-indigo
     state: latest
     update_cache: yes
-    allow_unauthenticated: yes
 
 - name: Install python-novaclient
   apt:

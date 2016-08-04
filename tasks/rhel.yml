@@ -1,14 +1,18 @@
 ---
+- name: Install the INDIGO GPG key
+  rpm_key:
+    state: present
+    key: http://repo.indigo-datacloud.eu/repository/RPM-GPG-KEY-indigodc
+
 - name: install the INDIGO release package
   yum:
-    name: http://jenkins.indigo-datacloud.eu/repository/indigo-testing/1/centos7/x86_64/base/indigodc-release-1.0.0-1.el7.centos.noarch.rpm
+    name: http://jenkins.indigo-datacloud.eu/repository/indigo-preview/1/centos7/x86_64/base/indigodc-release-1.0.0-1.el7.centos.noarch.rpm
     state: present
 
 - name: Install cloud-info-provider
   yum:
     name: cloud-info-provider-indigo
     state: latest
-    disable_gpg_check: yes
     update_cache: yes
 
 - name: Install python-novaclient
