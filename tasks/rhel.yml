@@ -26,3 +26,9 @@
     name: python-novaclient
     state: latest
   when: cloud_info_provider_middleware == 'openstack'
+
+- name: Install python-keystoneclient
+  yum:
+    name: python-keystoneclient
+    state: latest
+  when: cloud_info_provider_middleware == 'openstack'

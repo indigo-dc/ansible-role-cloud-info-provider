@@ -6,6 +6,13 @@
     state: latest
   when: cloud_info_provider_middleware == 'openstack'
 
+- name: Install python-keystoneclient
+  apt:
+    name: python-keystoneclient
+    state: latest
+  when: cloud_info_provider_middleware == 'openstack'
+
+
 - name: Install the INDIGO GPG key
   apt_key:
     state: present
