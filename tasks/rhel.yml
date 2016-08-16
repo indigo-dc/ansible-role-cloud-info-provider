@@ -15,6 +15,12 @@
     state: latest
     update_cache: yes
 
+- name: Install OpenStack repositories
+  yum:
+    name: centos-release-openstack-{{ cloud_info_provider_os_release }}
+    state: latest
+  when: cloud_info_provider_middleware == 'openstack'
+
 - name: Install python-novaclient
   yum:
     name: python-novaclient

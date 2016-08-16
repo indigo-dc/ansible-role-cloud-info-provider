@@ -3,6 +3,7 @@ cloud_info_provider_sitename: TEST
 cloud_info_provider_conf_dir: /etc/cloud-info-provider-indigo
 cloud_info_provider_main_conf_file: static.yaml
 # OpenStack configuration
+cloud_info_provider_os_release: mitaka
 cloud_info_provider_os_username: admin
 cloud_info_provider_os_password: openstack
 cloud_info_provider_os_auth_url: http://127.0.0.1:5000/v2.0
