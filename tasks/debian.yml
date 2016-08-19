@@ -14,6 +14,7 @@
   apt:
     name: python-novaclient
     state: latest
+    update_cache: yes
   when: cloud_info_provider_middleware == 'openstack'
 
 - name: Install python-keystoneclient
