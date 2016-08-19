@@ -3,7 +3,7 @@
   apt_repository: repo='ppa:cloudarchive/{{ cloud_info_provider_os_release }}'
   when: cloud_info_provider_middleware == 'openstack'
 
-# XXX install before repo as repo's version has broken dependencies
+# XXX install before INDIGO repo as repo's version has broken dependencies
 - name: Install python-novaclient
   apt:
     name: python-novaclient
