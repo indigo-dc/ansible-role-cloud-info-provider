@@ -1,13 +1,12 @@
 ---
-- name: Install OpenStack ppa
-  apt_repository:
-    repo: "deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/{{ cloud_info_provider_os_release }} main"
+- name: Install software-properties-common
+  apt:
+    name: software-properties-common
+    state: latest
   when: cloud_info_provider_middleware == 'openstack'
 
-- name: Install Ubuntu cloud keyring
-  apt:
-    name: ubuntu-cloud-keyring
-    state: latest
+- name: Install OpenStack ppa
+  command: "add-apt-repository -y cloud-archive:{{ cloud_info_provider_os_release }}"
   when: cloud_info_provider_middleware == 'openstack'
 
 # XXX install before INDIGO repo as repo's version has broken dependencies
@@ -15,6 +14,7 @@
   apt:
     name: python-novaclient
     state: latest
+    update_cache: yes
   when: cloud_info_provider_middleware == 'openstack'
 
 - name: Install python-keystoneclient
@@ -30,7 +30,7 @@
 
 - name: install the INDIGO release package
   apt:
-    state: present
+    state: latest
     deb: http://jenkins.indigo-datacloud.eu/repository/indigo/1/ubuntu/dists/trusty/main/binary-amd64/indigodc-release_1.0.0-1_amd64.deb
 
 - name: Install cloud-info-provider
