@@ -24,7 +24,7 @@ Role variables with their default values.
 
 ### OpenStack configuration
 
-* cloud_info_provider_os_release: mitaka
+* cloud_info_provider_os_release: liberty
 * cloud_info_provider_os_username: admin
 * cloud_info_provider_os_password: openstack
 * cloud_info_provider_os_auth_url: http://127.0.01:5000/v2.0
