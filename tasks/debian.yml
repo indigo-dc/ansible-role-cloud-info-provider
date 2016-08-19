@@ -1,6 +1,13 @@
 ---
 - name: Install OpenStack ppa
-  apt_repository: repo='ppa:cloudarchive/{{ cloud_info_provider_os_release }}'
+  apt_repository:
+    repo: "deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/{{ cloud_info_provider_os_release }} main"
+  when: cloud_info_provider_middleware == 'openstack'
+
+- name: Install Ubuntu cloud keyring
+  apt:
+    name: ubuntu-cloud-keyring
+    state: latest
   when: cloud_info_provider_middleware == 'openstack'
 
 # XXX install before INDIGO repo as repo's version has broken dependencies
