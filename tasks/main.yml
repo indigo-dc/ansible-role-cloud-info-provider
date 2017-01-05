@@ -4,8 +4,6 @@
     msg: Role unsupported on {{ansible_distribution}}"
   when: "ansible_os_family != 'Debian' and ansible_os_family != 'RedHat'"
 
-- include_vars: defaults/main.yml
-
 - name: Load debian-specific configuration
   include: debian.yml
   when: ansible_os_family == 'Debian'
