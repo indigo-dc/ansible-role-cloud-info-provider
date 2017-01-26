@@ -1,7 +1,8 @@
 ---
 cloud_info_provider_sitename: TEST
-cloud_info_provider_conf_dir: /etc/cloud-info-provider-indigo
+cloud_info_provider_conf_dir: /etc/cloud-info-provider
 cloud_info_provider_main_conf_file: static.yaml
+cloud_info_provider_tpl_extension: indigo
 # OpenStack configuration
 cloud_info_provider_os_release: liberty
 cloud_info_provider_os_username: admin
