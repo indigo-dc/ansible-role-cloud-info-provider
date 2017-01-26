@@ -1,6 +1,6 @@
 # ansible-role-cloud-info-provider
 
-Ansible role for setting up [cloud-info-provider](https://github.com/indigo-dc/cloud-info-provider)
+Ansible role for setting up [cloud-info-provider-indigo](https://github.com/indigo-dc/cloud-info-provider-indigo)
 
 [![BuildStatus](https://travis-ci.org/indigo-dc/ansible-role-cloud-info-provider.svg?branch=master)](https://travis-ci.org/indigo-dc/ansible-role-cloud-info-provider)
 
@@ -16,8 +16,9 @@ Role variables with their default values.
 ### General configuration
 
 * cloud_info_provider_sitename: TEST
-* cloud_info_provider_conf_dir: /etc/cloud-info-provider-indigo
+* cloud_info_provider_conf_dir: /etc/cloud-info-provider
 * cloud_info_provider_main_conf_file: static.yaml
+* cloud_info_provider_tpl_extension: indigo
 * cloud_info_provider_setup_cron: unset. Set to true to enable cron job.
 * cloud_info_provider_require_martkeplace_id: unset. Set to true to enable filter.
 * cloud_info_provider_middleware: unset but mandatory
