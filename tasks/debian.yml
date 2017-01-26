@@ -33,7 +33,7 @@
     state: present
     deb: http://jenkins.indigo-datacloud.eu/repository/indigo/1/ubuntu/dists/trusty/main/binary-amd64/indigodc-release_1.0.0-1_amd64.deb
 
-- name: Install cloud-info-provider
+- name: Install cloud-info-provider-indigo
   apt:
     name: python-cloud-info-provider-indigo
     state: latest

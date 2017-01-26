@@ -9,7 +9,7 @@
     name: http://jenkins.indigo-datacloud.eu/repository/indigo/1/centos7/x86_64/base/indigodc-release-1.0.0-1.el7.centos.noarch.rpm
     state: present
 
-- name: Install cloud-info-provider
+- name: Install cloud-info-provider-indigo
   yum:
     name: cloud-info-provider-indigo
     state: latest
