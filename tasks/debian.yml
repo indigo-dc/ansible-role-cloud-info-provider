@@ -5,9 +5,17 @@
     state: latest
   when: cloud_info_provider_middleware == 'openstack'
 
+  # XXX impossible to use apt_repository with ppa as it breaks due to ppa name
+  # So it is needed to manually install the appropriate keys (cloud keyring)
 - name: Install OpenStack ppa
-  command: "add-apt-repository -y cloud-archive:{{ cloud_info_provider_os_release }}"
-  when: cloud_info_provider_middleware == 'openstack'
+  apt_repository:
+    repo: 'deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/{{ cloud_info_provider_os_release }} main'
+
+- name: Install ubuntu cloud keyring
+  apt:
+    name: ubuntu-cloud-keyring
+    state: latest
+    update_cache: yes
 
 # XXX install before INDIGO repo as repo's version has broken dependencies
 - name: Install python-novaclient

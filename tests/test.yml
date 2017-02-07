@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
   remote_user: root
+  vars:
+    cloud_info_provider_middleware: openstack
   roles:
     - ansible-role-cloud-info-provider
