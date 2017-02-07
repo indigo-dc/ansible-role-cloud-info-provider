@@ -17,20 +17,6 @@
     state: latest
     update_cache: yes
 
-# XXX install before INDIGO repo as repo's version has broken dependencies
-- name: Install python-novaclient
-  apt:
-    name: python-novaclient
-    state: latest
-    update_cache: yes
-  when: cloud_info_provider_middleware == 'openstack'
-
-- name: Install python-keystoneclient
-  apt:
-    name: python-keystoneclient
-    state: latest
-  when: cloud_info_provider_middleware == 'openstack'
-
 - name: Install the INDIGO GPG key
   apt_key:
     state: present

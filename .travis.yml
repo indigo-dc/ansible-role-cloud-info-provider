@@ -25,8 +25,6 @@ script:
   - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
   # Run the role/playbook with ansible-playbook.
   - ansible-playbook tests/test.yml -i tests/inventory --connection=local --sudo
-  # XXX check if a second pass is needed to have idemptocence (due to travis env)
-  - ansible-playbook tests/test.yml -i tests/inventory --connection=local --sudo
   # Check idempotence, second run shouldn't change anything
   - >
     ansible-playbook tests/test.yml -i tests/inventory --connection=local --sudo
